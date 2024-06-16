@@ -9,7 +9,7 @@ html, body {
     height: 100%;
     margin: 0;
     font-family: 'Rockwell', serif; /* Fallback to serif if Rockwell is not available */
-    background: linear-gradient(to bottom, rgb(47, 81, 103), rgb(47, 81, 103)); /* Use the predominant color from the PDF */
+    background: linear-gradient(to bottom, rgb(1, 19, 32), rgb(16, 56, 102));
     color: #ffffff; /* Change text color to white */
 }
 
@@ -35,7 +35,7 @@ header {
 
 .header-text h1 {
     font-size: 5em; /* Adjusted to be larger */
-    color: #d2b48c; /* Brown-yellow color */
+    color: #d7a35f; /* Brown-yellow color */
     margin: 0;
     margin-bottom: 20px; /* Add margin between h1 and h2 */
 }
