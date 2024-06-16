@@ -1,0 +1,211 @@
+/* Font face definition */
+@font-face {
+    font-family: 'Rockwell';
+    src: url('path/to/rockwell.ttf') format('truetype'); /* Replace with the correct path to your font file */
+}
+
+/* Basic HTML and body styling */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Rockwell', serif; /* Fallback to serif if Rockwell is not available */
+    background: linear-gradient(to bottom, rgb(47, 81, 103), rgb(47, 81, 103)); /* Use the predominant color from the PDF */
+    color: #ffffff; /* Change text color to white */
+}
+
+/* Body layout */
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%; /* Adding margin to the left and right sides */
+}
+
+/* Header layout */
+header {
+    display: grid;
+    grid-template-columns: 40% 60%; /* Adjust column widths */
+    align-items: center;
+    padding: 50px 0;
+}
+
+.header-text {
+    text-align: left;
+    grid-column: 1 / 2;
+}
+
+.header-text h1 {
+    font-size: 5em; /* Adjusted to be larger */
+    color: #d2b48c; /* Brown-yellow color */
+    margin: 0;
+    margin-bottom: 20px; /* Add margin between h1 and h2 */
+}
+
+.header-text h2 {
+    font-size: 1.5em;
+    color: #ffffff; /* Change text color to white */
+    margin: 0; /* Remove top margin to ensure space is controlled by h1 */
+    line-height: 1.5; /* Ensure text takes up more vertical space */
+}
+
+.header-image {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    grid-column: 2 / 3;
+}
+
+.header-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    height: auto;
+}
+
+.divider {
+    border-top: 2px dotted #00d4ff;
+    margin: 20px 0;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.GenerationPart {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    height: calc(100vh - 320px); /* Adjust to fit the space between header, divider, and footer */
+    padding: 20px;
+}
+
+.voice-selection, .generate-button, .image-generation {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+}
+
+.voice-selection h4, .image-generation h5 {
+    margin-top: 0;
+    color: #00d4ff;
+}
+
+button {
+    background: #00d4ff;
+    color: #0a0a0a;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+button span {
+    visibility: visible;
+    transition: visibility 0.3s;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    visibility: hidden;
+    transition: visibility 0.3s, content 0.3s;
+}
+
+/* Apply animation only to voice buttons in the first column */
+.voice-button:hover span {
+    visibility: hidden;
+}
+
+.voice-button:hover::before {
+    visibility: visible;
+    content: '\25B6'; /* Play icon (►) */
+}
+
+.voice-button.playing span {
+    visibility: hidden;
+}
+
+.voice-button.playing::before {
+    visibility: visible;
+    content: '\25A0'; /* Stop icon (■) */
+}
+
+.hidden {
+    display: none;
+}
+
+#generated-image {
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+    transition: opacity 1s ease-in-out;
+}
+
+#error-message {
+    color: red;
+    margin-top: 20px;
+    transition: opacity 0.5s;
+}
+
+.wipe-out {
+    animation: wipeOut 1s forwards;
+}
+
+@keyframes wipeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.skip {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #00d4ff;
+    color: #0a0a0a;
+    padding: 10px;
+    z-index: 100;
+    transition: top 0.3s ease-in-out;
+}
+
+.skip a {
+    color: #0a0a0a;
+    text-decoration: none;
+}
+
+.skip a:focus {
+    outline: none;
+}
+
+.skip:focus-within {
+    top: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}

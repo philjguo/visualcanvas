@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/icon.png">
+    <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>AI Image Generation</title>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <div class="skip"><a href="#main">Skip to Main Content</a></div>
+
+    <header>
+        <div class="header-grid">
+            <!-- Header text section -->
+            <div class="header-text">
+                <h1>See Beyond</h1>
+                <h2>Imagine spoken words blossoming into visuals, where complex ideas unfold not through endless dialogue but as striking, intuitive images. Compare your note-taking and the generated visual notes.</h2>
+            </div>
+            <!-- Header image section -->
+            <div class="header-image">
+                <img src="images/icon.png" alt="Header Image"> <!-- Replace with your local image path -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Dotted line divider -->
+    <div class="divider"></div>
+
+    <main id="main">
+        <div class="GenerationPart">
+            <!-- Voice selection buttons -->
+            <div class="voice-selection">
+                <h4 style="color: white;">Click to listen</h4>
+                <button class="voice-button" onclick="playVoice('audio/voice1.mp3', 'image1')"><span>What is Universal Basic Income?</span></button>
+                <button class="voice-button" onclick="playVoice('audio/voice2.mp3', 'image2')"><span>Persuasion</span></button>
+                <button class="voice-button" onclick="playVoice('audio/voice3.mp3', 'image3')"><span>Changing Education Paradigms</span></button>
+                <button class="voice-button" onclick="playVoice('audio/voice4.mp3', 'image4')"><span>Climate Change and Future of Humanity</span></button>
+                <audio id="audio-player"></audio>
+            </div>
+            <!-- Generate image button -->
+            <div class="generate-button">
+                <button onclick="generateImage()"><img src="images/icon.png" alt="Generate Button Image"></button>
+                <span>Visualize it</span>
+            </div>
+            <!-- Image generation display -->
+            <div class="image-generation">
+                <h5>Image Generation</h5>
+                <img id="generated-image" src="" alt="Generated Image" class="hidden">
+                <p id="error-message" class="hidden">Please play an audio clip before generating an image.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
