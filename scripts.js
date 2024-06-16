@@ -51,11 +51,11 @@ function generateImage() {
     const errorMessage = document.getElementById('error-message');
 
     // Stop the audio if it is playing
-    if (currentAudio && !currentAudio.paused) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
-        document.querySelectorAll('.voice-button').forEach(button => button.classList.remove('playing'));
-    }
+    // if (currentAudio && !currentAudio.paused) {
+    //     currentAudio.pause();
+    //     currentAudio.currentTime = 0;
+    //     document.querySelectorAll('.voice-button').forEach(button => button.classList.remove('playing'));
+    // }
 
     // Set the image source based on the current audio source
     let imagePath = '';

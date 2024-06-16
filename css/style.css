@@ -74,10 +74,12 @@ main {
 }
 
 .GenerationPart {
-    display: grid;
+    /*display: grid;
     grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
-    justify-content: space-between;
-    align-items: stretch;
+    /* justify-content: space-between; */
+    /* align-items: stretch; */
+    display: flex;
+
     width: 100%;
     height: calc(100vh - 320px); /* Adjust to fit the space between header, divider, and footer */
     padding: 20px;
@@ -90,6 +92,10 @@ main {
     flex-direction: column;
     justify-content: center;
     margin: 10px;
+}
+
+.voice-selection {
+    width: 20%;
 }
 
 .voice-selection h4, .image-generation h5 {
@@ -107,6 +113,18 @@ button {
     cursor: pointer;
     position: relative;
     transition: all 0.3s ease-in-out;
+}
+
+.generate-button {
+    align-items: center;
+    padding: 0;
+}
+
+.generate-button button {
+    background: #000;
+    width: 150px;
+    height: 15v0px;
+    padding: 0;
 }
 
 button span {
@@ -148,12 +166,17 @@ button::before {
     display: none;
 }
 
+.image-generation {
+    flex: 1;
+}
+
 #generated-image {
     max-width: 100%;
     max-height: 100%;
-    margin-top: 20px;
-    border-radius: 10px;
+    border: 15px solid #fff;
     transition: opacity 1s ease-in-out;
+    transform: rotate(-10deg);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.5);
 }
 
 #error-message {
