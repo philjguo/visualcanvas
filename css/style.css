@@ -11,6 +11,7 @@ html, body {
     font-family: 'Rockwell', serif; /* Fallback to serif if Rockwell is not available */
     background: linear-gradient(to bottom, rgb(1, 19, 32), rgb(16, 56, 102));
     color: #ffffff; /* Change text color to white */
+    overflow: hidden;
 }
 
 /* Body layout */
@@ -22,6 +23,7 @@ body {
 
 header {
     position: relative;
+    height: 30vh;
 }
 
 .video-background {
@@ -42,7 +44,7 @@ header {
     top: 0;
     left: 0;
     display: grid;
-    grid-template-columns: 40% 60%; /* Adjust column widths */
+    grid-template-columns: 60% 40%; /* Adjust column widths */
     align-items: center;
     padding: 50px 0;
 }
@@ -53,7 +55,7 @@ header {
 }
 
 .header-text h1 {
-    font-size: 5em; /* Adjusted to be larger */
+    font-size: 4em; /* Adjusted to be larger */
     color: #d7a35f; /* Brown-yellow color */
     margin: 0;
     margin-bottom: 20px; /* Add margin between h1 and h2 */
@@ -74,9 +76,7 @@ header {
 }
 
 .header-image img {
-    max-width: 100%;
-    border-radius: 10px;
-    height: auto;
+    height: 25vh; 
 }
 
 .divider {
