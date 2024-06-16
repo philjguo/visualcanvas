@@ -112,7 +112,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     position: relative;
-    transition: all 0.3s ease-in-out;
+    /* transition: all 0.3s ease-in-out; */
 }
 
 .generate-button {
@@ -129,7 +129,7 @@ button {
 
 button span {
     visibility: visible;
-    transition: visibility 0.3s;
+    /* transition: visibility 0.3s; */
 }
 
 button::before {
@@ -140,7 +140,7 @@ button::before {
     transform: translate(-50%, -50%);
     font-size: 1.5em;
     visibility: hidden;
-    transition: visibility 0.3s, content 0.3s;
+    /* transition: visibility 0.3s, content 0.3s; */
 }
 
 /* Apply animation only to voice buttons in the first column */
@@ -182,7 +182,7 @@ button::before {
 #error-message {
     color: red;
     margin-top: 20px;
-    transition: opacity 0.5s;
+    /* transition: opacity 0.5s; */
 }
 
 .wipe-out {
